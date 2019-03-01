@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "octocat-serch": {
+    "octocat-search": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/octocat-serch",
+            "outputPath": "dist/octocat-search",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "octocat-serch:build"
+            "browserTarget": "octocat-search:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "octocat-serch:build:production"
+              "browserTarget": "octocat-search:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "octocat-serch:build"
+            "browserTarget": "octocat-search:build"
           }
         },
         "test": {
@@ -108,7 +108,7 @@
         }
       }
     },
-    "octocat-serch-e2e": {
+    "octocat-search-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -117,11 +117,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "octocat-serch:serve"
+            "devServerTarget": "octocat-search:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "octocat-serch:serve:production"
+              "devServerTarget": "octocat-search:serve:production"
             }
           }
         },
@@ -137,5 +137,5 @@
       }
     }
   },
-  "defaultProject": "octocat-serch"
+  "defaultProject": "octocat-search"
 }
