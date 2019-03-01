@@ -15,6 +15,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -37,7 +38,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     FormsModule,
     ReactiveFormsModule,
     MatExpansionModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    FlexLayoutModule
   ],
   exports: [
     MatToolbarModule,
@@ -52,7 +54,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     FormsModule,
     ReactiveFormsModule,
     MatExpansionModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    FlexLayoutModule
   ],
 })
 export class SharedModule { }
