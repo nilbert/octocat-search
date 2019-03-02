@@ -1,3 +1,27 @@
-<p>
-  search works!
-</p>
+<div fxLayout="row" fxLayoutAlign="center">
+  <section fxFlex.xl="30%" fxFlex.lg="30%" fxFlex.md="30%" fxFlex.sm="80%" fxFlex.xs="100%">
+    <div class="search-container">
+      <mat-form-field class="search-input">
+        <input type="search" placeholder="Search" matInput [formControl]="searchField">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+  </section>
+</div>
+<div fxLayout="row wrap" fxLayout.xs="column wrap" fxLayout.sm="column wrap" fxLayoutGap="10px" fxLayoutAlign="center" fxLayoutAlign.sm="start" fxLayoutAlign.md="center" >
+    <mat-card fxFlex="310px" fxFlex.md="230px" fxFlex.sm="auto">
+        <mat-card-header>
+            <!-- <div mat-card-avatar>
+                <i class="fas fa-user-lock fa-2x text-black-50"></i>
+            </div> -->
+        </mat-card-header>
+   
+        <mat-card-content>
+           
+        </mat-card-content>
+        <mat-card-actions>
+            <!-- <button style="display: block;" color="primary" mat-button ></button>
+            <button style="display: block; margin-left:0px;" color="primary" ></button> -->
+        </mat-card-actions>
+    </mat-card>
+</div>
