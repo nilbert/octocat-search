@@ -20,6 +20,10 @@ import { RepositoryDetailsComponent } from './repository-details/repository-deta
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { FooterComponent } from './footer/footer.component';
 
+import {MatTooltipModule} from '@angular/material/tooltip';
+
+import { RouterModule, Routes } from '@angular/router';
+
 
 @NgModule({
   declarations: [RepositoryComponent, RepositoryDetailsComponent,FooterComponent],
@@ -40,7 +44,9 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     MatExpansionModule,
     MatProgressBarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatTooltipModule,
+    RouterModule
   ],
   exports: [
     MatToolbarModule,
@@ -59,8 +65,8 @@ import { FooterComponent } from './footer/footer.component';
     RepositoryComponent,
     RepositoryDetailsComponent,
     FlexLayoutModule,
-    FooterComponent
-
+    FooterComponent,
+    MatTooltipModule
   ],
 })
 export class SharedModule { }

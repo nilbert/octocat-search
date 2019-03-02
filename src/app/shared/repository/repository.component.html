@@ -1,18 +1,44 @@
 <mat-card class="example-card">
   <mat-card-header>
     <!-- <div mat-card-avatar class="example-header-image"></div> -->
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <mat-card-title>{{repository.name}}</mat-card-title>
+    <mat-card-subtitle>{{repository.owner.login}}</mat-card-subtitle>
   </mat-card-header>
   <!-- <img mat-card-image src="./assets/img/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
   <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
-      very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+    <p class="max-lines">
+      {{repository.description}}
     </p>
+    <a [routerLink]="['/search/details']" [queryParams]="{name:repository.name,owner:repository.owner.login }">asdasd</a>
+
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+    <div>
+        <div class="repo-info">
+            <a mat-icon-button href="{{repository.html_url}}">
+                <mat-icon aria-label="Example icon-button with a heart icon">home</mat-icon>
+              </a>
+        </div>
+
+        <!-- <a mat-icon-button href="{{repository.downloads_url}}">
+          <mat-icon aria-label="Example icon-button with a heart icon">archive</mat-icon>
+        </a> -->
+        <div  class="repo-info">
+          <button mat-icon-button  matTooltip="Estrellas" >
+            <mat-icon aria-label="Example icon-button with a heart icon">start</mat-icon>
+            {{repository.stargazers_count}}
+          </button>
+        </div>
+        <div  class="repo-info">
+          <button mat-icon-button matTooltip="Observadores">
+            <mat-icon aria-label="Example icon-button with a heart icon">visibility</mat-icon>
+            {{repository.watchers_count}}
+          </button>
+        </div>
+        <div style="clear: both;"></div>
+
+    </div>
+
+
   </mat-card-actions>
 </mat-card>

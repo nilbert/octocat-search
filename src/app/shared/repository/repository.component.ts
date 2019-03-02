@@ -7,11 +7,13 @@ import { Repository } from 'src/app/core/models/repository';
   styleUrls: ['./repository.component.scss']
 })
 export class RepositoryComponent implements OnInit {
-  // @Input() repository: Repository;
+   @Input() repository: Repository;
+
 
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

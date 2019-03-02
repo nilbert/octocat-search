@@ -9,19 +9,8 @@
   </section>
 </div>
 <div fxLayout="row wrap" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px grid" fxLayoutAlign="center" fxLayoutAlign.sm="start" fxLayoutAlign.md="center" >
-    <section fxFlex="310px" fxFlex.md="230px" fxFlex.sm="auto">
-      <app-repository></app-repository>
-    </section>
-    <section fxFlex="310px" fxFlex.md="230px" fxFlex.sm="auto">
-      <app-repository></app-repository>
-    </section>
-    <section fxFlex="310px" fxFlex.md="230px" fxFlex.sm="auto">
-      <app-repository></app-repository>
-    </section>
-    <section fxFlex="310px" fxFlex.md="230px" fxFlex.sm="auto">
-      <app-repository></app-repository>
-    </section>
-    <section fxFlex="310px" fxFlex.md="230px" fxFlex.sm="auto">
-      <app-repository></app-repository>
+
+    <section fxFlex="310px" fxFlex.md="230px" fxFlex.sm="auto" *ngFor="let item of results | async">
+      <app-repository [repository]="item"></app-repository>
     </section>
 </div>
