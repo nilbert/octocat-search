@@ -18,15 +18,15 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { RepositoryComponent } from './repository/repository.component';
 import { RepositoryDetailsComponent } from './repository-details/repository-details.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
-  declarations: [RepositoryComponent, RepositoryDetailsComponent],
+  declarations: [RepositoryComponent, RepositoryDetailsComponent,FooterComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
     MatIconModule,
-
     MatMenuModule,
     MatButtonModule,
     MatCardModule,
@@ -58,7 +58,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatProgressBarModule,
     RepositoryComponent,
     RepositoryDetailsComponent,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FooterComponent
+
   ],
 })
 export class SharedModule { }
