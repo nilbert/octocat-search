@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { SearchRoutingModule } from './search-routing.module';
 import { SearchComponent } from './search.component';
 import { SharedModule } from '../shared/shared.module';
+import { RepositoryComponent } from '../shared/repository/repository.component';
+
 
 
 @NgModule({

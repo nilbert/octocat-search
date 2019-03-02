@@ -17,6 +17,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { RepositoryComponent } from './repository/repository.component';
 import { RepositoryDetailsComponent } from './repository-details/repository-details.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { RepositoryDetailsComponent } from './repository-details/repository-deta
     CommonModule,
     MatToolbarModule,
     MatIconModule,
-   
+
     MatMenuModule,
     MatButtonModule,
     MatCardModule,
@@ -38,11 +39,12 @@ import { RepositoryDetailsComponent } from './repository-details/repository-deta
     FormsModule,
     ReactiveFormsModule,
     MatExpansionModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    FlexLayoutModule
   ],
   exports: [
     MatToolbarModule,
-    MatIconModule, 
+    MatIconModule,
     MatMenuModule,
     MatButtonModule,
     MatCardModule,
@@ -53,7 +55,10 @@ import { RepositoryDetailsComponent } from './repository-details/repository-deta
     FormsModule,
     ReactiveFormsModule,
     MatExpansionModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    RepositoryComponent,
+    RepositoryDetailsComponent,
+    FlexLayoutModule
   ],
 })
 export class SharedModule { }
