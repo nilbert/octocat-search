@@ -16,16 +16,16 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [FooterComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
     MatIconModule,
-   
     MatMenuModule,
     MatButtonModule,
     MatCardModule,
@@ -55,7 +55,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ReactiveFormsModule,
     MatExpansionModule,
     MatProgressBarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FooterComponent
   ],
 })
 export class SharedModule { }
