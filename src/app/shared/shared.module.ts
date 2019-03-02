@@ -15,10 +15,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { RepositoryComponent } from './repository/repository.component';
+import { RepositoryDetailsComponent } from './repository-details/repository-details.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [RepositoryComponent, RepositoryDetailsComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
