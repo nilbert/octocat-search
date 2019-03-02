@@ -9,7 +9,7 @@
     <p class="max-lines">
       {{repository.description}}
     </p>
-    <a [routerLink]="['/search/details']" [queryParams]="{name:repository.name,owner:repository.owner.login }">asdasd</a>
+    <a [routerLink]="['/search/details']" [queryParams]="{name:repository.name,owner:repository.owner.login, url:repository.url }">asdasd</a>
 
   </mat-card-content>
   <mat-card-actions>

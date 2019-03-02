@@ -23,7 +23,7 @@ import { RouterModule, Routes } from '@angular/router';
 
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
+   // { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

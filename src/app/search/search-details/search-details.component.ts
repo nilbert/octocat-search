@@ -10,6 +10,7 @@ import { Repository } from 'src/app/core/models/repository';
 export class SearchDetailsComponent implements OnInit {
   name: string = null;
   owner: string = null;
+  url: string = null;
   constructor(private _route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -19,6 +20,7 @@ export class SearchDetailsComponent implements OnInit {
         console.log(params);
      this.name = params.name;
      this.owner = params.owner;
+     this.url = params.url;
 
       });
 
