@@ -9,9 +9,12 @@
   </section>
 </div>
 <div fxLayout="row wrap" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="20px grid" fxLayoutAlign="center" fxLayoutAlign.sm="center" fxLayoutAlign.md="center" >
-    <section fxFlex *ngIf="loading">
-      <mat-progress-bar mode="buffer"></mat-progress-bar>
-    </section>
+    <section fxFlex >
+        <mat-progress-bar mode="buffer" *ngIf="loading"></mat-progress-bar>
+      </section>
+</div>
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="20px grid" fxLayoutAlign="center" fxLayoutAlign.sm="center" fxLayoutAlign.md="center" >
+   
     <section fxFlex="310px" fxFlex.md="230px" fxFlex.sm="auto" *ngFor="let item of results | async">
       <app-repository [repository]="item"></app-repository>
     </section>
