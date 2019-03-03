@@ -9,36 +9,35 @@
     <p class="max-lines">
       {{repository.description}}
     </p>
-    <a [routerLink]="['/search/details']" [queryParams]="{name:repository.name,owner:repository.owner.login, url:repository.url }">asdasd</a>
-
-  </mat-card-content>
-  <mat-card-actions>
     <div>
-        <div class="repo-info">
-            <a mat-icon-button href="{{repository.html_url}}">
-                <mat-icon aria-label="Example icon-button with a heart icon">home</mat-icon>
-              </a>
-        </div>
-
-        <!-- <a mat-icon-button href="{{repository.downloads_url}}">
-          <mat-icon aria-label="Example icon-button with a heart icon">archive</mat-icon>
-        </a> -->
-        <div  class="repo-info">
-          <button mat-icon-button  matTooltip="Estrellas" >
-            <mat-icon aria-label="Example icon-button with a heart icon">start</mat-icon>
-            {{repository.stargazers_count}}
-          </button>
-        </div>
-        <div  class="repo-info">
-          <button mat-icon-button matTooltip="Observadores">
-            <mat-icon aria-label="Example icon-button with a heart icon">visibility</mat-icon>
-            {{repository.watchers_count}}
-          </button>
-        </div>
-        <div style="clear: both;"></div>
-
+        <a class="repo-url" href="{{repository.html_url}}" >{{repository.full_name}}</a>
     </div>
 
 
+  </mat-card-content>
+  <mat-card-actions>
+    <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center">
+      <div class="repo-info" matTooltip="Estrellas">
+        <button mat-raised-button>
+          <mat-icon>start</mat-icon> {{repository.stargazers_count}}
+        </button>
+
+
+      </div>
+      <div class="repo-info" matTooltip="Observadores">
+        <button mat-raised-button>
+          <mat-icon>visibility</mat-icon> {{repository.watchers_count}}
+        </button>
+
+
+      </div>
+      <div class="repo-info" matTooltip="Ver más detalles de este repositorio">
+        <a mat-raised-button [routerLink]="['/search/details']" [queryParams]="{name:repository.name,owner:repository.owner.login, url:repository.url }">
+          <mat-icon>details</mat-icon>
+        </a>
+
+      </div>
+
+    </div>
   </mat-card-actions>
 </mat-card>

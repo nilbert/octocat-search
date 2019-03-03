@@ -1,4 +1,11 @@
 :host{
   // display: block;
-  height: 100%;
+   min-height:100%;
+  //  position:relative;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.repo-url{
+  font-size: 30px;
 }

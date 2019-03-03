@@ -15,6 +15,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatSelectModule} from '@angular/material/select';
+
+
 import { RepositoryComponent } from './repository/repository.component';
 import { RepositoryDetailsComponent } from './repository-details/repository-details.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -44,6 +47,7 @@ import { RouterModule, Routes } from '@angular/router';
     ReactiveFormsModule,
     MatExpansionModule,
     MatProgressBarModule,
+    MatSelectModule,
     FlexLayoutModule,
     MatTooltipModule,
     RouterModule
@@ -62,6 +66,7 @@ import { RouterModule, Routes } from '@angular/router';
     ReactiveFormsModule,
     MatExpansionModule,
     MatProgressBarModule,
+    MatSelectModule,
     RepositoryComponent,
     RepositoryDetailsComponent,
     FlexLayoutModule,

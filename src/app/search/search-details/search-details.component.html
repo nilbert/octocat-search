@@ -1,5 +1,23 @@
-<p>
-  search-details works!
-{{name}}
-<a href="{{url}}">ssss</a>
-</p>
+
+<div fxLayout="column" fxLayoutAlign="center">
+    <header class="rep-info" >
+        <h1>{{(repository | async)?.name}}</h1>
+        <h3>{{(repository | async)?.owner.login}}</h3>
+
+    </header>
+
+
+</div>
+<div>
+  <div class="select-container">
+    <mat-select placeholder="Branches" (selectionChange)="onSelection($event)">
+        <mat-option *ngFor="let item of items" [value]="item.name">
+          {{item.name}}
+        </mat-option>
+      </mat-select>
+
+</div>
+
+</div>
+
+
