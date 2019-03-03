@@ -6,6 +6,7 @@ import { environment } from '../../../environments/environment';
 import { map } from 'rxjs/operators';
 import { Branch } from '../models/branch';
 import { Commit } from '../models/commit';
+import { Author } from '../models/author';
 
 @Injectable({
   providedIn: 'root'
@@ -55,8 +56,19 @@ export class ApiService {
     };
     return this.http.get<Commit[]>(formatUri, httpOptions)
       .pipe(map(data => {
-        console.log('commit : %O', data);
-        return data;
+        const result = data.map(c => {
+          let commit = new Commit();
+          commit.message = c['commit']['message'];
+          commit.date = c['commit']['author']['date'];
+
+          let autor = new Author();
+          autor.name = c['commit']['author']['name'];
+          autor.avatar_url = c['author']['avatar_url'];
+          autor.login = c['author']['login'];
+          commit.author = autor;
+          return commit;
+        })
+        return result;
       }))
       ;
   }

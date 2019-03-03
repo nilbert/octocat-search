@@ -30,7 +30,7 @@ import { CommitComponent } from './commit/commit.component';
 
 
 @NgModule({
-  declarations: [RepositoryComponent, RepositoryDetailsComponent,FooterComponent, CommitComponent],
+  declarations: [RepositoryComponent, RepositoryDetailsComponent, FooterComponent, CommitComponent],
   imports: [
     CommonModule,
     MatToolbarModule,

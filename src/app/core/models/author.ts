@@ -1,5 +1,5 @@
 export class Author {
+  login: string;
   name: string;
-  email: string;
-  date: string;
+  avatar_url: string;
 }

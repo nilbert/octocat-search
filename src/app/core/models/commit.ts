@@ -1,6 +1,8 @@
 import { Author } from './author';
 
 export class Commit {
-  message: string
+  message: string;
   author: Author;
+  date: string;
+
 }

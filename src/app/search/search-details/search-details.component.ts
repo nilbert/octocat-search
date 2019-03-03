@@ -41,6 +41,10 @@ export class SearchDetailsComponent implements OnInit {
   onSelection($event){
     console.log($event.value);
     this.commits = this.apiService.getCommits(this.url, $event.value);
+    this.commits.subscribe(c=>
+      {
+        console.log("commit :% O",c);
+      });
   }
 
 }
