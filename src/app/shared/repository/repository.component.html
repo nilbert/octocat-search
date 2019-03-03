@@ -9,11 +9,9 @@
     <p class="max-lines">
       {{repository.description}}
     </p>
-    <div>
-        <a class="repo-url" href="{{repository.html_url}}" >{{repository.full_name}}</a>
+    <div class="repo-url">
+        <a  href="{{repository.html_url}}" >{{repository.full_name}}</a>
     </div>
-
-
   </mat-card-content>
   <mat-card-actions>
     <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center">
@@ -33,7 +31,7 @@
       </div>
       <div class="repo-info" matTooltip="Ver más detalles de este repositorio">
         <a mat-raised-button [routerLink]="['/search/details']" [queryParams]="{name:repository.name,owner:repository.owner.login, url:repository.url }">
-          <mat-icon>details</mat-icon>
+          <mat-icon>more_horiz</mat-icon>
         </a>
 
       </div>

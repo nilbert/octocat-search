@@ -55,7 +55,7 @@ export class ApiService {
     };
     return this.http.get<Commit[]>(formatUri, httpOptions)
       .pipe(map(data => {
-        console.log(' data : %O', data);
+        console.log('commit : %O', data);
         return data;
       }))
       ;

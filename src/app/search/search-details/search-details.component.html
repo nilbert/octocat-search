@@ -10,13 +10,23 @@
 </div>
 <div>
   <div class="select-container">
-    <mat-select placeholder="Branches" (selectionChange)="onSelection($event)">
+    <mat-select placeholder="Selecciona una Rama" mat (selectionChange)="onSelection($event)">
         <mat-option *ngFor="let item of items" [value]="item.name">
           {{item.name}}
         </mat-option>
       </mat-select>
+      <div fxLayout="row wrap" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="20px grid" fxLayoutAlign="center" fxLayoutAlign.sm="center" fxLayoutAlign.md="center" >
+        <section fxFlex *ngIf="loading">
+          <mat-progress-bar mode="buffer"></mat-progress-bar>
+        </section>
+        <section fxFlex="310px" fxFlex.md="230px" fxFlex.sm="auto" *ngFor="let commit of commits | async">
+
+        </section>
+    </div>
+
 
 </div>
+
 
 </div>
 

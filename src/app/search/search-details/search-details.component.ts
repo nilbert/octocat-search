@@ -4,6 +4,7 @@ import { Repository } from 'src/app/core/models/repository';
 import { ApiService } from 'src/app/core/services/api.service';
 import { Branch } from 'src/app/core/models/branch';
 import { Observable } from 'rxjs';
+import { Commit } from 'src/app/core/models/commit';
 @Component({
   selector: 'app-search-details',
   templateUrl: './search-details.component.html',
@@ -15,6 +16,7 @@ export class SearchDetailsComponent implements OnInit {
   url: string = null;
   items: Branch[] = [];
   repository: Observable<Repository>;
+  commits: Observable<Commit[]>;
 
   constructor(private _route: ActivatedRoute,private apiService: ApiService) { }
 
@@ -29,7 +31,6 @@ export class SearchDetailsComponent implements OnInit {
 
       });
       this.apiService.getBranches(this.url).subscribe(r => {
-        console.log('Result :%O', r);
         this.items = r ;
       });
       this.repository = this.apiService.getRepository(this.url);
@@ -39,6 +40,7 @@ export class SearchDetailsComponent implements OnInit {
   }
   onSelection($event){
     console.log($event.value);
+    this.commits = this.apiService.getCommits(this.url, $event.value);
   }
 
 }
