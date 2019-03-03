@@ -26,10 +26,11 @@ import { FooterComponent } from './footer/footer.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { RouterModule, Routes } from '@angular/router';
+import { CommitComponent } from './commit/commit.component';
 
 
 @NgModule({
-  declarations: [RepositoryComponent, RepositoryDetailsComponent,FooterComponent],
+  declarations: [RepositoryComponent, RepositoryDetailsComponent,FooterComponent, CommitComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -71,7 +72,8 @@ import { RouterModule, Routes } from '@angular/router';
     RepositoryDetailsComponent,
     FlexLayoutModule,
     FooterComponent,
-    MatTooltipModule
+    MatTooltipModule,
+    CommitComponent
   ],
 })
 export class SharedModule { }
