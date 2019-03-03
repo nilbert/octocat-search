@@ -15,13 +15,22 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSelectModule} from '@angular/material/select';
+
+
+import { RepositoryComponent } from './repository/repository.component';
+import { RepositoryDetailsComponent } from './repository-details/repository-details.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 import { FooterComponent } from './footer/footer.component';
 
+import {MatTooltipModule} from '@angular/material/tooltip';
+
+import { RouterModule, Routes } from '@angular/router';
+import { CommitComponent } from './commit/commit.component';
 
 
 @NgModule({
-  declarations: [FooterComponent],
+  declarations: [RepositoryComponent, RepositoryDetailsComponent, FooterComponent, CommitComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -39,7 +48,10 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     MatExpansionModule,
     MatProgressBarModule,
-    FlexLayoutModule
+    MatSelectModule,
+    FlexLayoutModule,
+    MatTooltipModule,
+    RouterModule
   ],
   exports: [
     MatToolbarModule,
@@ -55,8 +67,13 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     MatExpansionModule,
     MatProgressBarModule,
+    MatSelectModule,
+    RepositoryComponent,
+    RepositoryDetailsComponent,
     FlexLayoutModule,
-    FooterComponent
+    FooterComponent,
+    MatTooltipModule,
+    CommitComponent
   ],
 })
 export class SharedModule { }

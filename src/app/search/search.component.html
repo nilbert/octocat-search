@@ -1,0 +1,18 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <section fxFlex.xl="30%" fxFlex.lg="30%" fxFlex.md="30%" fxFlex.sm="80%" fxFlex.xs="100%">
+    <div class="search-container">
+      <mat-form-field class="search-input">
+        <input type="search" placeholder="Search" matInput [formControl]="searchField">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+  </section>
+</div>
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="20px grid" fxLayoutAlign="center" fxLayoutAlign.sm="center" fxLayoutAlign.md="center" >
+    <section fxFlex *ngIf="loading">
+      <mat-progress-bar mode="buffer"></mat-progress-bar>
+    </section>
+    <section fxFlex="310px" fxFlex.md="230px" fxFlex.sm="auto" *ngFor="let item of results | async">
+      <app-repository [repository]="item"></app-repository>
+    </section>
+</div>

@@ -1,0 +1,63 @@
+<div fxLayout="column" fxLayoutAlign="center">
+  <header class="rep-info">
+    <div>
+      <button mat-raised-button [routerLink]="['/search']" routerLinkActive="router-link-active">
+        <mat-icon>arrow_back</mat-icon> Volver
+      </button>
+    </div>
+    <h1>{{(repository | async)?.name}}</h1>
+    <h3>{{(repository | async)?.owner.login}}</h3>
+    <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+      <div fxfxFlex>
+        <button mat-raised-button matTooltip="Observadores">
+          <mat-icon>visibility</mat-icon>
+          {{(repository | async)?.watchers_count}}
+        </button>
+
+      </div>
+      <div fxfxFlex>
+        <button mat-raised-button matTooltip="Estrellas">
+          <mat-icon>start</mat-icon>
+          {{(repository | async)?.stargazers_count}}
+        </button>
+      </div>
+      <div fxfxFlex>
+        <button mat-raised-button matTooltip="Fork's">
+          <mat-icon>share </mat-icon>
+          {{(repository | async)?.forks_count}}
+        </button>
+      </div>
+      <div fxfxFlex>
+        <button mat-raised-button matTooltip="Fecha de Creación">
+          <mat-icon>calendar_today</mat-icon>
+          {{(repository | async)?.created_at | date}}
+        </button>
+      </div>
+    </div>
+
+  </header>
+
+  <section class="commit-section">
+    <h3 class="commit-tittle">Commit's</h3>
+    <div class="select-container">
+      <mat-select placeholder="Selecciona una Rama" matTooltip="Selecciona una Rama para ver los commit's de la misma"
+        mat (selectionChange)="onSelection($event)">
+        <mat-option *ngFor="let item of items" [value]="item.name">
+          {{item.name}}
+        </mat-option>
+      </mat-select>
+
+    </div>
+    <div class="commit-container">
+      <div fxLayout="column wrap" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="20px grid" fxLayoutAlign="center"
+        fxLayoutAlign.sm="center" fxLayoutAlign.md="center">
+        <!-- <section fxFlex *ngIf="loading">
+      <mat-progress-bar mode="buffer"></mat-progress-bar>
+    </section> -->
+        <section fxFlex *ngFor="let item of commits | async">
+          <app-commit [commit]="item"></app-commit>
+        </section>
+      </div>
+    </div>
+  </section>
+</div>
