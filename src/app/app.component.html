@@ -1,8 +1,20 @@
+<div fxLayout='column' class="zero" fxFlexFill>
+  <div  fxFlex="20%">
+      <mat-toolbar color="primary" class="topbar">
+          <a mat-icon-button [routerLink]='["/"]'>
+            <mat-icon>home</mat-icon>
+          </a>
+          <span class="spacer"></span>
+          <a class="repo-url" mat-icon-button href="https://github.com/nilbert/octocat-search" target="_blank">
+            <i class="fa fa-github"></i>
+          </a>
+        </mat-toolbar>
+  </div>
 
-<mat-toolbar color="primary" class="topbar">
-  <a mat-icon-button [routerLink]='["/"]'>
-    <mat-icon>home</mat-icon>
-</a>
-</mat-toolbar>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+  <div id="router-container" fxFlex="auto">
+
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer fxFlex="3%"></app-footer>
+
+</div>
