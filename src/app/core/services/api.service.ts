@@ -57,16 +57,24 @@ export class ApiService {
     return this.http.get<Commit[]>(formatUri, httpOptions)
       .pipe(map(data => {
         const result = data.map(c => {
-          let commit = new Commit();
+          try {
+            let commit = new Commit();
           commit.message = c['commit']['message'];
           commit.date = c['commit']['author']['date'];
 
           let autor = new Author();
           autor.name = c['commit']['author']['name'];
-          autor.avatar_url = c['author']['avatar_url'];
-          autor.login = c['author']['login'];
+          if(c['author']){
+            autor.avatar_url = c['author']['avatar_url'];
+            autor.login = c['author']['login'];
+          }
           commit.author = autor;
           return commit;
+
+          } catch (error) {
+            console.log('ocurrio un error mapeando el resuldado de los commit')
+          }
+
         })
         return result;
       }))
